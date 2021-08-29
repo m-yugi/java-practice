@@ -4,8 +4,8 @@ public class practice {
         //it works for any input
         int[] nums={2,2,1};
         int result=0;
-        for (int i = 0; i < nums.length; i++) {
-            result=result^nums[i];
+        for (int num : nums) {
+            result = result ^ num;
         }
         System.out.println(result);
     }
