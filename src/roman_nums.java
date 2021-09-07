@@ -1,58 +1,58 @@
 public class roman_nums {
     public static void main(String[] args) {
         int num = 58;
-        String total = "";
+        StringBuilder total = new StringBuilder();
         while (num > 0) {
             if(num >= 1000) {
-                total += "M";
+                total.append("M");
                 num -= 1000;
             }
             else if (num >=900) {
-                total += "CM";
+                total.append("CM");
                 num -= 900;
             }
             else if( num >=500) {
-                total += "D";
+                total.append("D");
                 num -= 500;
             }
             else if( num >=400) {
-                total += "CD";
+                total.append("CD");
                 num -= 400;
             }
             else if( num >=100) {
-                total += "C";
+                total.append("C");
                 num -= 100;
             }
             else if(num >=90) {
-                total += "XC";
+                total.append("XC");
                 num -= 90;
             }
             else if( num >=50) {
-                total += "L";
+                total.append("L");
                 num -= 50;
             }
             else if( num >=40) {
-                total += "XL";
+                total.append("XL");
                 num -= 40;
             }
             else if(num >=10) {
-                total += "X";
+                total.append("X");
                 num -= 10;
             }
             else if(num >=9) {
-                total += "IX";
+                total.append("IX");
                 num -= 9;
             }
             else if(num >=5) {
-                total += "V";
+                total.append("V");
                 num -= 5;
             }
             else if(num >=4) {
-                total += "IV";
+                total.append("IV");
                 num -= 4;
             }
             else if(num >=1) {
-                total += "I";
+                total.append("I");
                 num -= 1;
             }
         }
