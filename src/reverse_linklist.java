@@ -1,22 +1,17 @@
 import java.util.*;
 public class reverse_linklist {
     public static void main(String[] args) {
-        LinkedList<Integer> head = new LinkedList<>();
-        head.add(1);
-        head.add(2);
-        head.add(3);
-        head.add(4);
-        head.add(5);
-        int num = head.size();
+        int[] head={1,2,3,4,5};
+        int num=(head).length;
         int mid=num/2;
-        System.out.println(mid);
         int j=num-1;
-        for(int i=0;i<mid;i++){
-            int temp= head.get(i);
-            head.add(i,head.get(j));
-            head.add(j,temp);
-            j-=1;
+        int temp;
+        for(int i=0;i<mid;i++) {
+            temp = head[i];
+            head[i] = head[j];
+            head[j] = temp;
+            j -= 1;
         }
-        System.out.println(head);
+        System.out.println(Arrays.toString(head));
     }
 }
