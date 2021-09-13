@@ -2,7 +2,7 @@ import java.util.*;
 public class balloon {
     public static void main(String[] args){
         int a=0,b=0,l=0,o=0,n=0;
-
+        //works for any input
         String s="leetcode";
         for(int i=0;i<s.length();i++){
             switch (s.charAt(i)) {
