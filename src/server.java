@@ -1,18 +1,21 @@
-import java.rmi.*;
-public class server {
-    // Java program for client application
+import java.rmi.registry.Registry;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+public class server extends ImplExample {
+    public server() {
+
+    }
     public static void main(String args[]) {
-        String answer, value = "Reflection in Java";
         try {
-            // lookup method to find reference of remote object
-            Search access =
-                    (Search) Naming.lookup("rmi://localhost:1900" +
-                            "/geeksforgeeks");
-            answer = access.query(value);
-            System.out.println("Article on " + value +
-                    " " + answer + " at GeeksforGeeks");
-        } catch (Exception ae) {
-            System.out.println(ae);
+            ImplExample obj = new ImplExample();
+            Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
+            Registry registry = LocateRegistry.getRegistry();
+            registry.bind("Hello", stub);
+            System.err.println("Server ready");
+        } catch (Exception e) {
+            System.err.println("Server exception: " + e.toString());
+            e.printStackTrace();
         }
     }
 }
